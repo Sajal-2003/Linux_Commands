@@ -22,10 +22,3 @@ To use the `linux_commands.txt` file:
 
 3. Open the `linux_commands.txt` file to view the list of commands and their descriptions.
 
-## Contribution
-
-Contributions to this repository are welcome! If you have additional commands or improvements, feel free to submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
