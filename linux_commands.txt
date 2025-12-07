@@ -1,37 +1,119 @@
+| → send output to next command
+> → write to file 
+>> → append to file
+
 ls - The most frequently used command in Linux to list directories
+ls -a - show all the directories including the hidden files
+ls -l - show all the directories with all info such as size and other required characteristics
+
 pwd - Print working directory command in Linux
+
 cd - Linux command to navigate through directories
+cd /home - to navigate forward through the directories
+cd .. - to navigate backward through the directories
+
 mkdir - Command used to create directories in Linux
-mv - Move or rename files in Linux
-cp - Similar usage as mv but for copying files in Linux
-rm - Delete files or directories
+
 touch - Create blank/empty files
-ln - Create symbolic links (shortcuts) to other files
-cat - Display file contents on the terminal
+touch notes.txt (It will create a empty file in the current directory)
+
+mv - Move or rename files in Linux / move or rename folders also
+mv file1.txt folder-1 - this command moves the file1.txt into the folder-1
+mv file1.txt file2.txt - this command renames the file-1.txt to file-2.txt
+mv oldfolder newfolder
+mv folder1/ /home/sajal/Desktop/
+
+cp - Similar usage as mv but for copying files in Linux
+cp file.txt /home/sajal/Documents/ - This copies file.txt into the Documents folder.
+cp file.txt newfile.txt - Creates a duplicate with a new name.
+
+| Command | Meaning     | What happens                                             |
+| ------- | ----------- | -------------------------------------------------------- |
+| `cp`    | copy        | Original remains, duplicate is created                   |
+| `mv`    | move/rename | Original disappears from source and moves to destination |
+
+rm - Delete files or directories
+rm file.txt - Delete a file 
+rm alone cannot delete folders.
+rm -f (force)
+rm -r (recursive)
+rm -rf (recursive force)
+
 clear - Clear the terminal display
-echo - Print any text that follows the command
-man - Access manual pages for all Linux commands
-uname - Linux command to get basic information about the OS
-whoami - Get the active username
-tar - Command to extract and compress files in Linux
+
+cat - Display file contents on the terminal
+less - Loads file in pages and you can scroll up and down
+more - loads files as single singl pages - You can only scroll forward, not backward
+
 grep - Search for a string within an output
+grep "eror" .env
+
 head - Return the specified number of lines from the top
+head file.txt - shows default 10 lines of the file
+head -n 5 file.txt - shows starting 5 lines of the file
+
 tail - Return the specified number of lines from the bottom
-export - Export environment variables in Linux
+tail  file.txt - shows default 10 bottom lines of the file
+tail -n 5 file.txt - shows bottom 5 lines of the file
+
+ln - Create symbolic links (shortcuts) to other files
+ln -s <target> <link_name>
+ln -s /var/www/app/config.yaml config.yaml
+this means : config.yaml (shortcut) → points to → /var/www/app/config.yaml (real file)
+
+echo - Print any text that follows the command
+echo Hi - It prints Hi
+
+man - Access manual pages for all Linux commands (It provides documentary for all the linux commands)
+man uname same as uname --help
+
+uname - Linux command to get basic information about the OS
+
+whoami - Get the active username
+
+tar - Command to extract and compress files in Linux
+tar -cvf archive.tar folder/ - Create a .tar file (NO compression)
+tar -czvf archive.tar.gz folder/ - Create a compressed .tar.gz file
+tar -xvf archive.tar - Extract a .tar file
+tar -xzvf archive.tar.gz - Extract a .tar.gz file
+tar -tvf archive.tar - View contents INSIDE tar without extracting
+
 zip - Zip files in Linux
+zip archive.zip file1 file2
+
 unzip - Unzip files in Linux
+unzip archive.zip
+
 ssh - Secure Shell command in Linux
+
 service - Linux command to start and stop services
-ps - Display active processes
+service <service-name> <action>
+service nginx start
+service nginx stop
+service nginx restart
+service nginx reload
+service nginx status
+
+ps - Display active processes - It shows the running processes on your system.
+ps -ef ->
+
 kill and killall - Kill active processes by process ID or name
-df - Display disk filesystem information
+
 chmod - Command to change file permissions
+basically making changes to the file permissions who can write, read or execute. 
+
+Network - not much used - can look for them on Internet
 ifconfig - Display network interfaces and IP addresses
+ip addr
+curl
+ip link
+telnet
+ping
 wget - Direct download files from the internet
 ufw - Firewall command
-apt, pacman, yum, rpm - Package managers depending on the distro
-sudo - Command to escalate privileges in Linux
+
 alias - Create custom shortcuts for your regularly used commands
+alias cl="clear"
+
 whereis - Locate the binary, source, and manual pages for a command
 whatis - Find what a command is used for
-top - View active processes live with their system usage
